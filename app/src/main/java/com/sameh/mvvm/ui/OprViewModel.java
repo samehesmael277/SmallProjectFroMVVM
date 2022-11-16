@@ -1,11 +1,12 @@
 package com.sameh.mvvm.ui;
 
 import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.ViewModel;
 
 import com.sameh.mvvm.repo.DataBase;
 import com.sameh.mvvm.repo.NumberModel;
 
-public class OprViewModel {
+public class OprViewModel extends ViewModel {
 
     public MutableLiveData<Integer> mutablePlusLiveData = new MutableLiveData<>();
     public MutableLiveData<Integer> mutableDivLiveData = new MutableLiveData<>();

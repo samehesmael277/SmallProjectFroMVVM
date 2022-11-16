@@ -1,11 +1,15 @@
 package com.sameh.mvvm.ui;
 
+
 import androidx.appcompat.app.AppCompatActivity;
+
+import androidx.lifecycle.ViewModelProviders;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import com.sameh.mvvm.databinding.ActivityMainBinding;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         oprViewModel = new OprViewModel();
+
+        oprViewModel = ViewModelProviders.of(this).get(OprViewModel.class);
 
         // Mutable for Plus
         oprViewModel.mutablePlusLiveData.observe(this, integer -> binding.plusResultTextView.setText(integer.toString()));
